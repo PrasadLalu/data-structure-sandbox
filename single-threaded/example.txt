@@ -1,0 +1,5 @@
+In Node.js, understanding the difference between synchronous and asynchronous functions is crucial 
+because Node.js is single-threaded and event-driven. 
+Here's a clear explanation:
+1.Synchronous Function
+2.Asynchronous Function

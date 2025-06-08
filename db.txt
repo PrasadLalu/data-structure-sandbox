@@ -1,0 +1,34 @@
+db.users.aggregation([
+    {},
+    {$group: {_id: 'city', $total: {$sum: '$amount }}}
+])
+
+db.users.aggregation([
+    {
+        $lookup: {
+            from: 'orders',
+            localField: 'userId',
+            foreignField: id,
+            as: 'userOrders' 
+        }
+    }
+])
+
+db.users.find({ 'address.city': 'Bangalore' });
+
+db.user.aggregation([
+    { $match: { city: 'Bangalore' } },
+    { $group: { _id: '$customerId', $total: { $sum: '$amount'} } }
+])
+
+db.user.find({ age: { $lte: 25 } })
+db.user.find({ name: { $in: ['Max', 'Joy'] } })
+
+db.user.updateOne({
+    { name: '' },
+    { $set: {} }
+})
+
+db.user.find().sort({ createdby: 1 })
+
+user.find().skip(10).limit(5);
